@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Time for tungoh</title>
+    <title>Rakpang💕 - skibidiTime</title>
 
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: Arial, "Tahoma", sans-serif;
         }
 
         body {
@@ -19,16 +20,19 @@
             color: #333;
         }
 
-        /* หัวเว็บ */
+        /* =========================
+           HEADER
+        ========================= */
+
         header {
             background: linear-gradient(135deg, #4f46e5, #7c3aed);
             color: white;
-            padding: 35px 20px;
             text-align: center;
+            padding: 40px 20px;
         }
 
         header h1 {
-            font-size: 38px;
+            font-size: 40px;
             margin-bottom: 10px;
         }
 
@@ -36,34 +40,73 @@
             font-size: 18px;
         }
 
-        /* เมนู */
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
         nav {
             background: white;
             padding: 15px;
             text-align: center;
             box-shadow: 0 2px 8px #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         nav a {
-            text-decoration: none;
             color: #4f46e5;
+            text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
         }
 
-        /* เนื้อหา */
+        nav a:hover {
+            color: #7c3aed;
+        }
+
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
         .container {
             max-width: 1100px;
             margin: 30px auto;
             padding: 0 20px;
         }
 
-        .welcome {
+
+        /* =========================
+           CARD
+        ========================= */
+
+        .card {
             background: white;
             padding: 25px;
             border-radius: 15px;
-            margin-bottom: 25px;
             box-shadow: 0 3px 10px #ddd;
+            margin-bottom: 25px;
+        }
+
+        .card h2,
+        .card h3 {
+            color: #4f46e5;
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           WELCOME
+        ========================= */
+
+        .welcome {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 3px 10px #ddd;
+            margin-bottom: 25px;
         }
 
         .welcome h2 {
@@ -71,7 +114,11 @@
             margin-bottom: 10px;
         }
 
-        /* การ์ด */
+
+        /* =========================
+           CARDS
+        ========================= */
+
         .cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -79,25 +126,44 @@
             margin-bottom: 30px;
         }
 
-        .card {
+        .info-card {
             background: white;
             padding: 25px;
             border-radius: 15px;
             box-shadow: 0 3px 10px #ddd;
         }
 
-        .card h3 {
+        .info-card h3 {
             color: #4f46e5;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
-        /* To do */
-        .todo input {
-            width: 75%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+        .info-card p {
+            line-height: 1.7;
         }
+
+
+        /* =========================
+           INPUT
+        ========================= */
+
+        input {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            margin: 5px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4f46e5;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
 
         button {
             border: none;
@@ -107,40 +173,109 @@
             color: white;
             cursor: pointer;
             font-weight: bold;
+            margin: 5px;
         }
 
         button:hover {
             background: #3730a3;
         }
 
-        ul {
-            margin-top: 15px;
-            padding-left: 20px;
+        .delete-btn {
+            background: #dc2626;
         }
 
-        li {
-            margin: 10px 0;
+        .delete-btn:hover {
+            background: #991b1b;
         }
 
-        /* Pomodoro */
+
+        /* =========================
+           TODO
+        ========================= */
+
+        .todo-form {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .todo-form input {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        #taskList {
+            list-style: none;
+            padding: 0;
+        }
+
+        #taskList li {
+            background: #f5f5ff;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .task-text {
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+
+        /* =========================
+           POMODORO
+        ========================= */
+
         .timer {
             text-align: center;
         }
 
         #time {
-            font-size: 48px;
+            font-size: 60px;
             font-weight: bold;
             color: #4f46e5;
             margin: 20px;
         }
 
-        /* ตาราง */
+        .timer p {
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           SCHEDULE
+        ========================= */
+
+        .schedule-form {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .schedule-form input {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
             background: white;
-            border-radius: 15px;
             overflow: hidden;
+            border-radius: 15px;
             box-shadow: 0 3px 10px #ddd;
         }
 
@@ -148,6 +283,7 @@
             background: #4f46e5;
             color: white;
             padding: 15px;
+            text-align: center;
         }
 
         td {
@@ -156,226 +292,557 @@
             border-bottom: 1px solid #eee;
         }
 
-        /* Footer */
+        tr:hover {
+            background: #f8f8ff;
+        }
+
+        .empty-message {
+            text-align: center;
+            padding: 25px;
+            color: #888;
+        }
+
+
+        /* =========================
+           TIPS
+        ========================= */
+
+        .tips {
+            line-height: 2;
+        }
+
+        .tips li {
+            margin-bottom: 5px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
         footer {
             margin-top: 40px;
-            padding: 25px;
+            padding: 30px;
             background: #222;
             color: white;
             text-align: center;
         }
 
-        /* มือถือ */
+        footer p {
+            margin: 5px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
         @media (max-width: 700px) {
-            .cards {
-                grid-template-columns: 1fr;
-            }
 
             header h1 {
                 font-size: 28px;
             }
 
             nav a {
+                display: inline-block;
+                margin: 5px 8px;
+                font-size: 14px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            #time {
+                font-size: 45px;
+            }
+
+            input {
+                width: 100%;
+                margin: 5px 0;
+            }
+
+            .todo-form,
+            .schedule-form {
                 display: block;
-                margin: 8px;
+            }
+
+            .todo-form button,
+            .schedule-form button {
+                width: 100%;
+                margin: 5px 0;
             }
         }
     </style>
 </head>
 
+
 <body>
 
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
     <header>
-        <h1>Time for pang</h1>
-        <p>อยากให้แพงอ่านหนังสือ</p>
+
+        <h1>⏰ Time Manager</h1>
+
+        <p>
+            เว็บไซต์ช่วยจัดการเวลา
+            วางแผนชีวิตให้เป็นระบบ
+        </p>
+
     </header>
 
+
+    <!-- =========================
+         MENU
+    ========================= -->
+
     <nav>
-        <a href="#home">หน้าหลัก</a>
-        <a href="#todo">สิ่งที่ต้องทำ</a>
-        <a href="#timer">จับเวลา</a>
-        <a href="#schedule">ตารางเวลา</a>
+
+        <a href="#home">🏠 หน้าหลัก</a>
+
+        <a href="#todo">📋 สิ่งที่ต้องทำ</a>
+
+        <a href="#timer">⏱️ จับเวลา</a>
+
+        <a href="#schedule">📅 ตารางเวลา</a>
+
+        <a href="#tips">💡 เทคนิค</a>
+
     </nav>
+
 
     <div class="container">
 
-        <!-- หน้าหลัก -->
+
+        <!-- =========================
+             HOME
+        ========================= -->
+
         <section id="home" class="welcome">
-            <h2>👋 ยินดีต้อนรับ!</h2>
+
+            <h2>แพงอ่านหนังสือยัง✌</h2>
+
             <p>
-                เว็บไซต์ช่วยจัดการเวลา สำหรับนักเรียนและคนที่ต้องการ
-                วางแผนชีวิตให้เป็นระบบ
+               เว็บนี้เขียนเพื่อให้แพงตั้งใจอ่านหนังสือเราอยากลองเขียนดู55555
             </p>
+
         </section>
 
-        <!-- การ์ด -->
+
+        <!-- =========================
+             INFORMATION CARDS
+        ========================= -->
+
         <div class="cards">
 
-            <div class="card">
-                <h3>📋 วางแผนงาน</h3>
+            <div class="info-card">
+
+                <h3>📚 วางแผน</h3>
+
                 <p>
-                    จดสิ่งที่ต้องทำและจัดลำดับความสำคัญ
-                    เพื่อไม่ให้ลืมงานสำคัญ
+                    แบ่งเวลาง่ายๆอย่าลืมอ่านหนังสือด้วย
                 </p>
+
             </div>
 
-            <div class="card">
-                <h3>จับเวลา</h3>
+
+            <div class="info-card">
+
+                <h3>⏱️ จับเวลา</h3>
+
                 <p>
-                    ทำงาน 25 นาที และพัก 5 นาที
-                    เพื่อช่วยให้มีสมาธิ
+                   จับให้พอมีสมาธิ
                 </p>
+
             </div>
 
-            <div class="card">
-                <h3>📅 ตารางเวลา</h3>
+
+            <div class="info-card">
+
+                <h3>📅 จัดตารางเวลา</h3>
+
                 <p>
-                    วางแผนเวลาเรียน เวลาพัก
-                    และเวลาส่วนตัวให้สมดุล
+                    เพิ่มกิจกรรมและกำหนดเวลาของตัวเอง
+                    ได้ตามต้องการ
                 </p>
+
             </div>
 
         </div>
 
-        <!-- To-do List -->
-        <section id="todo" class="card todo">
 
-            <h3>📋 สิ่งที่ต้องทำวันนี้</h3>
 
-            <input
-                type="text"
-                id="taskInput"
-                placeholder="พิมพ์งานที่ต้องทำ..."
-            >
+        <!-- =========================
+             TODO LIST
+        ========================= -->
 
-            <button onclick="addTask()">เพิ่มงาน</button>
+        <section id="todo" class="card">
+
+            <h2>📋 สิ่งที่ต้องทำ</h2>
+
+            <p>
+                เพิ่มงานที่ต้องทำของคุณได้ที่นี่
+            </p>
+
+            <div class="todo-form">
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="เช่น ทำการบ้านคณิตศาสตร์"
+                >
+
+                <button onclick="addTask()">
+                    ➕ เพิ่มงาน
+                </button>
+
+            </div>
+
 
             <ul id="taskList"></ul>
 
         </section>
 
-        <br>
 
-        <!-- Pomodoro -->
+
+        <!-- =========================
+             POMODORO
+        ========================= -->
+
         <section id="timer" class="card timer">
 
-            <h3>🍅 Pomodoro Timer</h3>
+            <h2>study lock in</h2>
 
-            <p>โฟกัสกับงาน 25 นาที แล้วพัก 5 นาที</p>
+            <p>
+                อ่าน 50 นาที แล้วพัก
+            </p>
 
-            <div id="time">25:00</div>
+            <div id="time">
+                50.00
+            </div>
 
-            <button onclick="startTimer()">เริ่ม</button>
-            <button onclick="pauseTimer()">หยุด</button>
-            <button onclick="resetTimer()">รีเซ็ต</button>
+            <button onclick="startTimer()">
+                ▶️ เริ่ม
+            </button>
+
+            <button onclick="pauseTimer()">
+                ⏸️ หยุด
+            </button>
+
+            <button onclick="resetTimer()">
+                🔄 รีเซ็ต
+            </button>
+
+        </section>
+
+
+
+        <!-- =========================
+             SCHEDULE
+        ========================= -->
+
+        <section id="schedule" class="card">
+
+            <h2>จัดการเวลา</h2>
+
+            <p>
+                เพิ่มเวลาและกิจกรรมของเธอเองได้เลย
+            </p>
+
+
+            <!-- FORM เพิ่มตาราง -->
+
+            <div class="schedule-form">
+
+                <input
+                    type="text"
+                    id="timeInput"
+                    placeholder="เวลา เช่น 08:00 - 09:00"
+                >
+
+                <input
+                    type="text"
+                    id="activityInput"
+                    placeholder="กิจกรรม เช่น อ่านหนังสือ"
+                >
+
+                <button onclick="addSchedule()">
+                    ➕ เพิ่มกิจกรรม
+                </button>
+
+            </div>
+
+
+            <!-- TABLE -->
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                🕐 เวลา
+                            </th>
+
+                            <th>
+                                📌 กิจกรรม
+                            </th>
+
+                            <th>
+                                ⚙️ จัดการ
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="scheduleList">
+
+                    </tbody>
+
+                </table>
+
+            </div>
 
         </section>
 
-        <br>
 
-        <!-- ตารางเวลา -->
-        <section id="schedule">
 
-            <h2 style="margin-bottom:15px;">📅 ตารางจัดการเวลา</h2>
+        <!-- =========================
+             TIPS
+        ========================= -->
 
-            <table>
+        <section id="tips" class="card">
 
-                <tr>
-                    <th>เวลา</th>
-                    <th>กิจกรรม</th>
-                </tr>
+            <h2>💡 เทคนิคจัดการเวลา</h2>
 
-                <tr>
-                    <td>07:00 - 08:00</td>
-                    <td>🌅 เตรียมตัว / เดินทางไปโรงเรียน</td>
-                </tr>
+            <ul class="tips">
 
-                <tr>
-                    <td>08:00 - 16:00</td>
-                    <td>🏫 เรียน</td>
-                </tr>
+                <li>
+                    ✅ เขียนสิ่งที่ต้องทำในแต่ละวัน
+                </li>
 
-                <tr>
-                    <td>16:00 - 17:00</td>
-                    <td>⚽ พักผ่อน / ออกกำลังกาย</td>
-                </tr>
+                <li>
+                    ✅ จัดลำดับความสำคัญของงาน
+                </li>
 
-                <tr>
-                    <td>18:00 - 20:00</td>
-                    <td>📚 ทำการบ้าน / อ่านหนังสือ</td>
-                </tr>
+                <li>
+                    ✅ แบ่งเวลาทำงานและเวลาพัก
+                </li>
 
-                <tr>
-                    <td>20:00 - 21:00</td>
-                    <td>🎮 เวลาส่วนตัว</td>
-                </tr>
+                <li>
+                    ✅ หลีกเลี่ยงการเล่นโทรศัพท์ขณะเรียน
+                </li>
 
-                <tr>
-                    <td>22:00</td>
-                    <td>😴 เข้านอน</td>
-                </tr>
+                <li>
+                    ✅ พักผ่อนและนอนให้เพียงพอ
+                </li>
 
-            </table>
+                <li>
+                    ✅ ตั้งเป้าหมายที่สามารถทำได้จริง
+                </li>
+
+            </ul>
 
         </section>
+
 
     </div>
 
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
     <footer>
-        <p>เว็บไซต์จัดการเวลา | Time Manager</p>
-        <p>จัดทำโดย ธัญพิสิษฐ์ ภูศรี</p>
+
+        <p>
+            ⏰ Time Managerforpang
+        </p>
+
+        <p>
+            เว็บไซต์จัดการเวลา
+        </p>
+
+        <p>
+            จัดทำโดย Thanpisit Poosri
+        </p>
+
     </footer>
 
 
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
     <script>
 
-        // --------------------
-        // To-do List
-        // --------------------
+
+        /* =====================================
+           TODO LIST
+        ===================================== */
+
+        let tasks =
+            JSON.parse(localStorage.getItem("tasks")) || [];
+
+
+        function saveTasks() {
+
+            localStorage.setItem(
+                "tasks",
+                JSON.stringify(tasks)
+            );
+
+        }
+
+
+        function showTasks() {
+
+            let list =
+                document.getElementById("taskList");
+
+            list.innerHTML = "";
+
+
+            tasks.forEach(function(task, index) {
+
+                let li =
+                    document.createElement("li");
+
+
+                li.innerHTML = `
+
+                    <span
+                        class="task-text ${task.completed ? "completed" : ""}"
+                        onclick="completeTask(${index})"
+                    >
+                        ${task.text}
+                    </span>
+
+                    <button
+                        class="delete-btn"
+                        onclick="deleteTask(${index})"
+                    >
+                        🗑️ ลบ
+                    </button>
+
+                `;
+
+
+                list.appendChild(li);
+
+            });
+
+        }
+
 
         function addTask() {
 
-            let input = document.getElementById("taskInput");
-            let task = input.value;
+            let input =
+                document.getElementById("taskInput");
 
-            if (task === "") {
+            let text =
+                input.value.trim();
+
+
+            if (text === "") {
+
                 alert("กรุณาพิมพ์งานที่ต้องทำ");
+
                 return;
+
             }
 
-            let li = document.createElement("li");
 
-            li.innerHTML =
-                task +
-                ' <button onclick="this.parentElement.remove()">เสร็จแล้ว ✓</button>';
+            tasks.push({
 
-            document.getElementById("taskList").appendChild(li);
+                text: text,
+
+                completed: false
+
+            });
+
+
+            saveTasks();
+
+            showTasks();
+
 
             input.value = "";
+
         }
 
 
-        // --------------------
-        // Pomodoro Timer
-        // --------------------
+        function completeTask(index) {
+
+            tasks[index].completed =
+                !tasks[index].completed;
+
+            saveTasks();
+
+            showTasks();
+
+        }
+
+
+        function deleteTask(index) {
+
+            tasks.splice(index, 1);
+
+            saveTasks();
+
+            showTasks();
+
+        }
+
+
+
+        /* =====================================
+           POMODORO TIMER
+        ===================================== */
 
         let seconds = 25 * 60;
-        let timer;
+
+        let timer = null;
+
 
         function updateTime() {
 
-            let minutes = Math.floor(seconds / 60);
-            let sec = seconds % 60;
+            let minutes =
+                Math.floor(seconds / 60);
+
+            let sec =
+                seconds % 60;
+
 
             document.getElementById("time").innerText =
-                String(minutes).padStart(2, "0") +
-                ":" +
+
+                String(minutes).padStart(2, "0")
+                + ":"
+                +
                 String(sec).padStart(2, "0");
+
         }
+
 
         function startTimer() {
 
-            clearInterval(timer);
+            if (timer !== null) {
+
+                return;
+
+            }
+
 
             timer = setInterval(function() {
 
@@ -385,30 +852,239 @@
 
                     updateTime();
 
-                } else {
+                }
+
+                else {
 
                     clearInterval(timer);
 
-                    alert("หมดเวลาแล้ว! พัก 5 นาทีได้เลย 🎉");
+                    timer = null;
+
+                    alert(
+                        "🎉 หมดเวลาแล้ว! พัก 5 นาทีได้เลย"
+                    );
+
                 }
 
             }, 1000);
+
         }
 
+
         function pauseTimer() {
+
             clearInterval(timer);
+
+            timer = null;
+
         }
+
 
         function resetTimer() {
 
             clearInterval(timer);
 
+            timer = null;
+
             seconds = 25 * 60;
 
             updateTime();
+
         }
+
+
+
+        /* =====================================
+           SCHEDULE
+        ===================================== */
+
+        let schedules =
+            JSON.parse(localStorage.getItem("schedules")) || [];
+
+
+        function saveSchedules() {
+
+            localStorage.setItem(
+                "schedules",
+                JSON.stringify(schedules)
+            );
+
+        }
+
+
+        function showSchedules() {
+
+            let list =
+                document.getElementById("scheduleList");
+
+            list.innerHTML = "";
+
+
+            if (schedules.length === 0) {
+
+                list.innerHTML = `
+
+                    <tr>
+
+                        <td
+                            colspan="3"
+                            class="empty-message"
+                        >
+                            ยังไม่มีตารางเวลา
+                            <br>
+                            ลองเพิ่มกิจกรรมด้านบนดูนะ 😊
+                        </td>
+
+                    </tr>
+
+                `;
+
+                return;
+
+            }
+
+
+            schedules.forEach(function(schedule, index) {
+
+                let row =
+                    document.createElement("tr");
+
+
+                row.innerHTML = `
+
+                    <td>
+                        ${schedule.time}
+                    </td>
+
+                    <td>
+                        ${schedule.activity}
+                    </td>
+
+                    <td>
+
+                        <button
+                            class="delete-btn"
+                            onclick="deleteSchedule(${index})"
+                        >
+                            🗑️ ลบ
+                        </button>
+
+                    </td>
+
+                `;
+
+
+                list.appendChild(row);
+
+            });
+
+        }
+
+
+        function addSchedule() {
+
+            let time =
+                document
+                .getElementById("timeInput")
+                .value
+                .trim();
+
+
+            let activity =
+                document
+                .getElementById("activityInput")
+                .value
+                .trim();
+
+
+            if (time === "" || activity === "") {
+
+                alert(
+                    "กรุณากรอกเวลาและกิจกรรม"
+                );
+
+                return;
+
+            }
+
+
+            schedules.push({
+
+                time: time,
+
+                activity: activity
+
+            });
+
+
+            saveSchedules();
+
+            showSchedules();
+
+
+            document.getElementById("timeInput").value = "";
+
+            document.getElementById("activityInput").value = "";
+
+        }
+
+
+        function deleteSchedule(index) {
+
+            schedules.splice(index, 1);
+
+            saveSchedules();
+
+            showSchedules();
+
+        }
+
+
+
+        /* =====================================
+           ENTER KEY
+        ===================================== */
+
+        document
+            .getElementById("taskInput")
+            .addEventListener("keypress", function(event) {
+
+                if (event.key === "Enter") {
+
+                    addTask();
+
+                }
+
+            });
+
+
+        document
+            .getElementById("activityInput")
+            .addEventListener("keypress", function(event) {
+
+                if (event.key === "Enter") {
+
+                    addSchedule();
+
+                }
+
+            });
+
+
+
+        /* =====================================
+           LOAD DATA
+        ===================================== */
+
+        showTasks();
+
+        showSchedules();
+
+        updateTime();
+
 
     </script>
 
 </body>
+
 </html>
